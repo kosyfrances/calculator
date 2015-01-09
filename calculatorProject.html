@@ -1,53 +1,54 @@
 <!DOCTYPE html>
-<html>
-  <head>
-  	<link rel= "stylesheet" href="calculatorProject.css"> 
-    <title> Calculator</title>
-    <script language="JavaScript" src=calculatorProject.js>
-    </script>
-  </head>
-  <body>
-  	<table>
-      <tr> 
-        <th> CALCULATOR <th>
-      </tr>
-      <tr> 
-        <th><input type="text"  id="textBox" size=30 value="" readonly></th> 
-      </tr>        
-          <tr class="operator"> 
-            <td>
-              <button onclick="doOperation(this)" value="*">*</button>
-              <button onclick="doOperation(this)" value="+">+</button>
-              <button onclick="doOperation(this)" value="-">-</button>
-              <button onclick="doOperation(this)" value="/">/</button>
-              <button onclick="doOperation(this)" value="=">=</button>
-            </td> 
-          </tr>	   
-          <tr> 
-            <td>
-              <button onclick="clickNumber(this)" value="9">9</button> 
-              <button onclick="clickNumber(this)" value="8">8</button> 
-              <button onclick="clickNumber(this)" value="7">7</button>
-              <button onclick="clickNumber(this)" value="6">6</button>
-            </td> 
-          </tr> 
-          <tr> 
-            <td>
-              <button onclick="clickNumber(this)" value="5">5</button> 
-              <button onclick="clickNumber(this)" value="4">4</button>
-              <button onclick="clickNumber(this)" value="3">3</button> 
-              <button onclick="clickNumber(this)" value="2">2</button>
-            </td> 
-          </tr>
-          <tr class="lowerButton"> 
-            <td> 
-              <button onclick="clickNumber(this)" value="1">1</button>             
-              <button onclick="clickNumber(this)" value="0">0</button>
-              <button onclick="clickNumber(this)" value=".">.</button>
-              <button onclick="clickNumber(this)" value="CE">CE</button>
-              <button onclick="clickNumber(this)" value="">AC</button>
-            </td> 
-          </tr>         
-    </table>
-  </body>
-</html>
+<head>
+  <title>Calculator</title>
+  <link rel= "stylesheet" href="calculatorProject.css"> 
+  <script language="JavaScript" src=calculatorProject.js>
+  </script> 
+</head>
+<body>
+  <table>
+    <tr>
+      <td>CALCULATOR</td>
+    </tr>
+    <tr class="textBox">
+      <th><input type="text" id="textBox" size=21 value="" readonly</th>
+    </tr>
+    <tr>
+      <td>
+        <button onclick="clickNumber(this)" value="7">7</button>
+        <button onclick="clickNumber(this)" value="8">8</button>
+        <button onclick="clickNumber(this)" value="9">9</button>
+        <button onclick="doOperation(this)" value="/">/</button>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <button onclick="clickNumber(this)" value="4">4</button>
+        <button onclick="clickNumber(this)" value="5">5</button>
+        <button onclick="clickNumber(this)" value="6">6</button>
+        <button onclick="doOperation(this)" value="*">*</button>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <button onclick="clickNumber(this)" value="1">1</button>
+        <button onclick="clickNumber(this)" value="2">2</button>
+        <button onclick="clickNumber(this)" value="3">3</button>
+        <button onclick="doOperation(this)" value="-">-</button>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <button onclick="clickNumber(this)" value="0">0</button>
+        <button onclick="clickNumber(this)" value=".">.</button>
+        <button onclick="clickNumber(this)" value="CE">CE</button>
+        <button onclick="doOperation(this)" value="+">+</button>
+      </td>
+    </tr>
+    <tr class="lastButton">
+      <td>
+        <button onclick="doOperation(this)" value="=">=</button>
+      </td>
+    </tr>
+  </table>
+</body>
