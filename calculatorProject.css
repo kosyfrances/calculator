@@ -1,27 +1,32 @@
 table {
-  border: 2px solid black;
+  border: 5px double black;
   background-color: #98AFC7;
   text-align: center;
   margin: 50px;
+  border-radius: 9px;
 }
 table,th {
   color: white;
   font-family: verdana;
   font-weight: bold;
 }
+.textBox {
+  height:30px; 
+  font-size:14pt;
+  border-radius: 8px;
+}
 button {
   text-align: center;
   text-indent: -8px;
   padding: 18px;
   width: 20px;
-  border-radius:5px;
+  border-radius:8px;
   font-size: 17px;
   font-family: verdana;
   line-height: 2px;
-  height: 45px; 
+  height: 40px; 
   font-weight: bold; 
 }
 .lastButton button{
-  width: 170px; 
-  height: 40px; 
+  width: 170px;   
 }
