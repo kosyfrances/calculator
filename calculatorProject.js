@@ -6,17 +6,13 @@ var answer = 0,
 
 function clickNumber(number) {
   var text = document.getElementById("textBox");
- 
-  if (number.value === "CE") {    
-    text.value = 0;
-    answer = 0;    
-  }
+
   /* 
     The condition below removes leading zeros
     and also allows the decimal point (if clicked)to append to zero instead of overwrting it.
     It also replaces the textbox's value with the next after an operator is clicked. 
   */
-  else if ((text.value === "0") && (number.value !== ".") || (operatorClicked)) {    
+  if ((text.value === "0") && (number.value !== ".") || (operatorClicked)) {    
     text.value = number.value; 
     operatorClicked = false;
   }
