@@ -1,6 +1,6 @@
 table {
   border: 5px double black;
-  background-color: #98AFC7;
+  background-color: #728fce;
   text-align: center;
   margin: 50px;
   border-radius: 9px;
@@ -12,8 +12,7 @@ table,th {
 }
 .textBox {
   height:30px; 
-  font-size:14pt;
-  border-radius: 8px;
+  font-size:12pt;
 }
 button {
   text-align: center;
@@ -25,7 +24,11 @@ button {
   font-family: verdana;
   line-height: 2px;
   height: 40px; 
-  font-weight: bold; 
+  font-weight: bold;
+}
+button:hover {
+  background-color: white;
+  color: blue;
 }
 .lastButton button{
   width: 170px;   

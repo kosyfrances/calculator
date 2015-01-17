@@ -7,9 +7,10 @@ var answer = 0,
 function clickNumber(number) {
   var text = document.getElementById("textBox");
   
-  if (number.value === "CE") {    
+  if (number.value === "C") {    
     text.value = 0;
     answer = 0;    
+    lastOperator = "";
   }
   /* 
     The condition below removes leading zeros
@@ -50,79 +51,43 @@ function divide(answer, textInput) {
   return sum;
 }
 
-function doOperation (operator) {
-  var text = document.getElementById("textBox"),
-      textInput = parseFloat(text.value);
-  
-  switch(operator.value) {
-    case "+":      
-      answer = add(answer, textInput);
-      text.value = answer;
-      operatorClicked = true;
-      break;
+function equals(answer, textInput) {
+  var text = document.getElementById("textBox");
 
-    case "-":       
-      if (answer !== 0) {
-        answer = subtract(answer, textInput);
-      }
-      else {
-        answer = textInput; 
-      }    
-      text.value = answer; 
-      operatorClicked = true;
-      break;
-
-    case "*":         
-      if (answer !== 0) {
-        answer = multiply(answer, textInput);
-      }
-      else {
-        answer = textInput; 
-      }    
-      text.value = answer;
-      operatorClicked = true; 
-      break;
-
-    case "/":      
-      if (answer !== 0) {
-        answer = divide(answer, textInput);
-      }
-      else {
-        answer = textInput; 
-      }    
-      text.value = answer; 
-      operatorClicked = true;
-      break;
-
-    case "=":               
-      if (lastOperator === "+") {
-        answer = add(answer, textInput);
-        text.value = answer;
-      }
-      else if (lastOperator === "-") { 
-        answer = subtract(answer, textInput);
-        text.value = answer;
-      }
-      else if (lastOperator === "*") { 
-        answer = multiply(answer, textInput);
-        text.value = answer;
-      }
-      else if (lastOperator === "/") { 
-        answer = divide(answer, textInput);
-        if (answer === Infinity) {
-          text.value = "cannot divide by zero";
-        }
-        else {
-          text.value = answer; 
-        }
-      }
-      else {
-        text.value = textInput;
-      }
-      answer = 0;
-      operatorClicked = true;
-      break;
+  if (lastOperator === "+") {
+    answer = add(answer, textInput);
+    text.value = answer;
   }
+  else if (lastOperator === "-") { 
+    answer = subtract(answer, textInput);
+    text.value = answer;
+  }
+  else if (lastOperator === "*") { 
+    answer = multiply(answer, textInput);
+    text.value = answer;
+  }
+  else if (lastOperator === "/") { 
+    answer = divide(answer, textInput);
+    if (answer === Infinity) {
+      text.value = "Not A Number";
+    }
+    else {
+      text.value = answer; 
+    }
+  }
+  else {
+    answer = textInput;
+    text.value = answer;
+  }
+  return answer;
+  operatorClicked = true;
+} 
+
+function doOperation(operator) {
+  var textInput = parseFloat(document.getElementById("textBox").value);
+
+  answer = equals(answer, textInput);
+  operatorClicked = true;  
   lastOperator = operator.value;
 } 
 
