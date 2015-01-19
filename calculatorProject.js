@@ -11,6 +11,7 @@ function clickNumber(number) {
     text.value = 0;
     answer = 0;    
     lastOperator = "";
+    operatorClicked = false;
   }
   /* 
     The condition below removes leading zeros
@@ -78,7 +79,7 @@ function equals(answer, textInput) {
   else {
     answer = textInput;
     text.value = answer;
-  }
+  }  
   return answer;
   operatorClicked = true;
 } 
