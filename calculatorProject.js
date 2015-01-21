@@ -7,7 +7,11 @@ var answer = 0,
 function clickNumber(number) {
   var text = document.getElementById("textBox");
   
-  if (number.value === "C") {    
+  //This condition checks for decimal point and stops appending it if it exists in the textbox.
+  if((text.value.indexOf(".") !== -1) && (number.value === ".")) {
+    number.value = "."; 
+  }
+  else if (number.value === "C") {    
     text.value = 0;
     answer = 0;    
     lastOperator = "";
@@ -18,7 +22,7 @@ function clickNumber(number) {
     and also allows the decimal point (if clicked)to append to zero instead of overwrting it.
     It also replaces the textbox's value with the next after an operator is clicked. 
   */
-  else if ((text.value === "0") && (number.value !== ".") || (operatorClicked)) {    
+  else if ((text.value === "0") && (number.value !== ".") || (operatorClicked) ) {    
     text.value = number.value; 
     operatorClicked = false;
   }
