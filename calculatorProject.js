@@ -124,8 +124,9 @@ function log(answer) {
   return sum;
 }
 
-function equals(answer, textInput) {
+function equals(answer, textInput, operator) {
   var text = document.getElementById("textBox");
+  
   
   switch (lastOperator) {
     case "+":
@@ -158,63 +159,72 @@ function equals(answer, textInput) {
       text.value = answer;
       break;
 
-    case "sqrt":
-      answer = squareRoot(answer);
-      text.value = answer;
-      break;
-
-    case "cubeRt":
-      answer = cubeRoot(answer);
-      text.value = answer;
-      break;
-    
-    case "power2":
-      answer = power2(answer);
-      text.value = answer;
-      break;
-    
-    case "power3":
-      answer = power3(answer);
-      text.value = answer;
-      break;
-
-    case "powerN":
+     case "powerN":
       answer = powerN(answer, textInput);
       text.value = answer;
-      break;
-
-    case "cos":
-      answer = cos(answer);
-      text.value = answer;
-      break;
-
-    case "sin":
-      answer = sin(answer);
-      text.value = answer;
-      break;
-
-    case "tan":
-      answer = tan(answer);
-      text.value = answer;
-      break;
-    
-    case "log":
-      answer = log(answer);
-      text.value = answer;
-      break;
+      break;   
 
     default:
-      answer = textInput;
-      text.value = answer;    
+      /*
+      Had to add this switch case here so that the operators that need just one values like log, sine, etc 
+      can immediately return results as soon as the operator is pressed instead of waiting for equal to.
+      used operator.value instead of lastOperator as lastOperator is initialized to empty by default, 
+      and we need the operator to act quickly immediately it is pressed.  
+      */
+      switch (operator.value) {
+        case "sqrt":
+          answer = squareRoot(textInput);
+          text.value = answer;
+          break;
+
+        case "cubeRt":
+          answer = cubeRoot(textInput);
+          text.value = answer;
+          break;
+        
+        case "power2":
+          answer = power2(textInput);
+          text.value = answer;
+          break;
+        
+        case "power3":
+          answer = power3(textInput);
+          text.value = answer;
+          break;  
+
+        case "cos":
+          answer = cos(textInput);
+          text.value = answer;
+          break;
+
+        case "sin":
+          answer = sin(textInput);
+          text.value = answer;
+          break;
+
+        case "tan":
+          answer = tan(textInput);
+          text.value = answer;
+          break;
+        
+        case "log":
+          answer = log(textInput);
+          text.value = answer;
+          break;
+
+        default: 
+          answer = textInput;
+          text.value = answer;  
+      }        
   }
-  return answer;
   operatorClicked = true;
+  return answer; 
 } 
 
 function doOperation(operator) {
   var textInput = parseFloat(document.getElementById("textBox").value);
 
-  answer = equals(answer, textInput);
+  answer = equals(answer, textInput, operator);
   operatorClicked = true;  
   lastOperator = operator.value;
 } 
