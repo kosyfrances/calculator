@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<head>
+  <title>Calculator</title>
+  <link rel= "stylesheet" href="calculatorProject.css"> 
+  <script language="JavaScript" src=calculatorProject.js>
+  </script> 
+</head>
+<body>
+  <table>
+    <tr>
+      <td>CALCULATOR</td>
+    </tr>
+    <tr>
+      <td colspan="2"><input type="text" id="textBox" class="textBox" size=29 value="0" readonly></td>
+    </tr>
+    <tr>
+      <td colspan="2">
+        <button onclick="clickNumber(this)" value="C">C</button>
+        <button onclick="doOperation(this)" value="%">%</button>
+        <button onclick="doOperation(this)" value="sqrt">&radic;</button>
+        <button onclick="doOperation(this)" value="cubeRt">&#8731;</button>
+        <button class="powerButton" onclick="doOperation(this)" value="power2">x<sup>2</sup></button>
+        <button class="powerButton" onclick="doOperation(this)" value="power3">x<sup>3</sup></button>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2">
+        <button onclick="clickNumber(this)" value="7">7</button>
+        <button onclick="clickNumber(this)" value="8">8</button>
+        <button onclick="clickNumber(this)" value="9">9</button>
+        <button onclick="doOperation(this)" value="/">/</button>
+        <button class="sohButton" onclick="doOperation(this)" value="log">log</button>
+        <button class="powerButton" onclick="doOperation(this)" value="powerN">x<sup>n</sup></button>        
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <button onclick="clickNumber(this)" value="4">4</button>
+        <button onclick="clickNumber(this)" value="5">5</button>
+        <button onclick="clickNumber(this)" value="6">6</button>
+        <button onclick="doOperation(this)" value="*">*</button>
+        <button class="sohButton" onclick="doOperation(this)" value="cos">cos</button>                      
+      </td> 
+      <td rowspan="3">       
+        <button class="equalsButton" onclick="doOperation(this)" value="=">=</button>           
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <button onclick="clickNumber(this)" value="1">1</button>
+        <button onclick="clickNumber(this)" value="2">2</button>
+        <button onclick="clickNumber(this)" value="3">3</button>
+        <button onclick="doOperation(this)" value="-">-</button>
+        <button class="sohButton" onclick="doOperation(this)" value="sin">sin</button>        
+      </td>
+    </tr>
+    <tr>   
+      <td>
+        <button class="zeroButton" onclick="clickNumber(this)" value="0">0</button>
+        <button onclick="clickNumber(this)" value=".">.</button>
+        <button onclick="doOperation(this)" value="+">+</button>
+        <button class="sohButton" onclick="doOperation(this)" value="tan">tan</button>
+      </td>
+    </tr> 
+  </table>
+</body>

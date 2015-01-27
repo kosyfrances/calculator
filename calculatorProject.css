@@ -1,0 +1,50 @@
+table {
+  border: 5px double black;
+  background-color: #728fce;  
+  margin: 50px;
+  border-radius: 9px;
+  line-height: 35px;  
+  text-align: center;
+}
+table,th {
+  color: white;
+  font-family: verdana;
+  font-weight: bold;
+}
+.textBox {
+  height:30px; 
+  font-size:12pt;
+}
+button {
+  text-align: center;
+  text-indent: -8px;
+  padding: 18px;
+  width: 20px;
+  border-radius:7px;
+  font-size: 14px;
+  font-family: verdana;
+  line-height: 1px;
+  height: 40px; 
+  font-weight: bold;
+}
+button:hover {
+  background-color: white;
+  color: blue;
+}
+.powerButton{
+ font-size: 10px;
+}
+.sohButton{
+ font-size: 12px;
+}
+.zeroButton {
+  width: 83px;
+}
+.equalsButton {
+  height: 134px;
+}
+@media(max-width: 500px){
+  button {
+    padding: 18px;  
+  }
+}
